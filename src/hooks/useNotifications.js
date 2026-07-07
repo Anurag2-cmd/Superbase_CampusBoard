@@ -44,6 +44,7 @@ export function useNotifications(userId) {
     }
   }, [userId])
 
+  //Render all the notifications created by various users
   const markAllRead = async () => {
     const unreadIds = notifications.filter((n) => !n.is_read).map((n) => n.id)
     if (unreadIds.length === 0) return
